@@ -47,7 +47,11 @@ func main() {
 ```
 
 ### Running tests without larget tests
-$ go test
+```
+    $ go test
+```
 
 ### Running tests with larget tests
-$ go test -runLargeTests=true
+```
+    $ go test -runLargeTests=true
+```
