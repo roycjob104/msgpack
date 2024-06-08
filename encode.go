@@ -110,6 +110,16 @@ func Encode(data interface{}) (string, error) {
 	}
 }
 
+// InitEncode encodes data into a msgpack string.
+func InitEncode(data interface{}) (string, error) {
+	switch dataType := data.(type) {
+	case map[string]interface{}:
+		return EncodeStringInterface(data.(map[string]interface{}))
+	default:
+		return "", fmt.Errorf("unsupported type: %T", dataType)
+	}
+}
+
 func EncodeStringInterface(data map[string]interface{}) (string, error) {
 	interfaceLen := len(data)
 	if interfaceLen > Max32Bit {
