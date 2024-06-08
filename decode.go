@@ -141,7 +141,7 @@ func DecodeString(data []byte) (string, int, error) {
 	return "", 0, fmt.Errorf("unsupported string format: 0x%x", data[0])
 }
 
-func InitDecode(encoded string) (interface{}, error) {
+func JsonDecode(encoded string) (interface{}, error) {
 	decoded, err := hex.DecodeString(encoded)
 	if err != nil {
 		return nil, err

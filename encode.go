@@ -110,8 +110,8 @@ func Encode(data interface{}) (string, error) {
 	}
 }
 
-// InitEncode encodes data into a msgpack string.
-func InitEncode(data interface{}) (string, error) {
+// JsonEncode encodes data into a msgpack string.
+func JsonEncode(data interface{}) (string, error) {
 	switch dataType := data.(type) {
 	case map[string]interface{}:
 		return EncodeStringInterface(data.(map[string]interface{}))

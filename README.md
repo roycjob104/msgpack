@@ -26,19 +26,19 @@ func main() {
 		log.Fatalf("Error unmarshalling JSON: %v", err)
 	}
 
-	resultEncode, err := msgpack.InitEncode(data)
+	resultEncode, err := msgpack.JsonEncode(data)
 	if err != nil {
 		log.Fatalf("Error encoding data: %v", err)
 	}
 	fmt.Println("Encode json data =" + resultEncode)
 
-	decodedData, err := msgpack.InitDecode(resultEncode)
+	decodedData, err := msgpack.JsonDecode(resultEncode)
 	if err != nil {
 		log.Fatalf("Error decoding data: %v", err)
 	}
 
 	fmt.Printf("Decoded data = %+v\n", decodedData)
-	resultEncode, err = msgpack.InitEncode(decodedData.(map[string]interface{}))
+	resultEncode, err = msgpack.JsonEncode(decodedData.(map[string]interface{}))
 	if err != nil {
 		log.Fatalf("Error encoding data: %v", err)
 	}
