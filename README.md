@@ -50,8 +50,3 @@ func main() {
 ```
     $ go test
 ```
-
-### Running tests with larget tests
-```
-    $ go test -runLargeTests=true
-```
